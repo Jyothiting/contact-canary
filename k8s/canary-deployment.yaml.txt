@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contact-canary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: contact
+      version: canary
+  template:
+    metadata:
+      labels:
+        app: contact
+        version: canary
+    spec:
+      containers:
+        - name: app
+          image: yourdockerhub/contact-book:canary
+          ports:
+            - containerPort: 3000

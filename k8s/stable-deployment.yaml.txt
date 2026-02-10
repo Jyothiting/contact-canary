@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contact-stable
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: contact
+      version: stable
+  template:
+    metadata:
+      labels:
+        app: contact
+        version: stable
+    spec:
+      containers:
+        - name: app
+          image: yourdockerhub/contact-book:stable
+          ports:
+            - containerPort: 3000
