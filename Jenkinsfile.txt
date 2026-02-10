@@ -2,14 +2,14 @@ pipeline {
   agent any
 
   environment {
-    DOCKER_IMAGE = "yourdockerhub/contact-book"
+    DOCKER_IMAGE = "jyothi235/contact-book"
   }
 
   stages {
 
     stage("Checkout") {
       steps {
-        git 'https://github.com/yourname/contact-book-app.git'
+        git 'https://github.com/Jyothiting/contact-book-app.git'
       }
     }
 
