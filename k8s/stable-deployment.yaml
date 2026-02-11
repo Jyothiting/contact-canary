@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: app
-          image: yourdockerhub/contact-book:stable
+          image: jyothi235/contact-book:stable
           ports:
             - containerPort: 3000
