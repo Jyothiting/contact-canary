@@ -1,3 +1,4 @@
+<<<<<<< HEAD:public/index.html
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,3 +22,28 @@
   </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Book v1</title>
+</head>
+<body>
+  <h1>📒 Contact Book (Stable)</h1>
+  <ul id="list"></ul>
+
+  <script>
+    fetch("/api/contacts")
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById("list");
+        data.forEach(c => {
+          const li = document.createElement("li");
+          li.innerText = `${c.name} - ${c.phone}`;
+          list.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>
+>>>>>>> c14609809423b20ec9fbcb7f857226e4b500af4c:index.html
